@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>LoongBuy spreadsheet | Dansk guide til varer, QC og fragt</title>
+  <meta name="description" content="Brug LoongBuy spreadsheet til at forstå produktlinks, sammenligne størrelser og læse QC-fotos. Se, hvilke udgifter du skal regne med ved levering til Danmark.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="LoongBuy spreadsheet | Dansk guide til varer, QC og fragt">
+  <meta property="og:description" content="Find varekategorier, og tjek størrelser, lagerfotos og den samlede pris før bestilling.">
+  <meta name="theme-color" content="#f8f3eb">
+  <!-- Kildegrundlag: Bings første resultatside kunne ikke verificeres. Emnerne bygger på en alternativ søgning i ti domæner: loongbuy.net, sopel.fit, alibabaspreadsheet.com, loongbuy.live, mickeybuys.com, loongbuyhaul.com, tang-buy.net, loongbuywithqc.com, findhaul.com og repsheet.net. -->
+  <style>
+    :root{color-scheme:light;--paper:#f8f3eb;--ink:#272236;--muted:#5c5368;--accent:#573b74;--line:#d9cede;--panel:#efe5f3}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 system-ui,sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.17}
+    h1{font-size:clamp(2.5rem,7vw,5.25rem);letter-spacing:-.065em}
+    h2{font-size:clamp(1.65rem,4vw,2.35rem);letter-spacing:-.035em}
+    h3{font-size:1.15rem}
+    p{margin-top:.65rem}
+    a{color:var(--accent);text-underline-offset:.18em}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+    img{display:block;width:100%;height:auto}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .top{padding-block:1rem;border-bottom:1px solid var(--line);font-weight:700}
+    .categories{padding-block:1rem}
+    .categories ul,.looks,.guides{display:grid;gap:.75rem}
+    .categories ul{grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:.75rem 0 0}
+    .categories a{display:block;height:100%;padding:.6rem .75rem;border:1px solid var(--line);border-radius:.45rem;background:#fff;text-decoration:none;font-weight:650;overflow-wrap:anywhere}
+    .categories a:hover{background:var(--panel);text-decoration:underline}
+    .hero{display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:clamp(1rem,4vw,3rem);background:var(--panel);padding:clamp(1rem,4vw,3rem);border-radius:1.25rem}
+    .hero p,.intro{max-width:65ch}
+    .hero img,.looks img{aspect-ratio:1;object-fit:contain;background:#fff;border-radius:.6rem}
+    figcaption,.note{font-size:.875rem;color:var(--muted)}
+    figcaption{padding-top:.35rem}
+    .button{display:inline-block;margin-top:1rem;padding:.65rem 1rem;border-radius:.45rem;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+    .button:hover{text-decoration:underline}
+    .section{margin-top:2.5rem}
+    .looks,.guides{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:1rem}
+    .guides article{padding:1rem;border-top:3px solid var(--accent);background:#fff}
+    details{border-bottom:1px solid var(--line);padding:.75rem 0}
+    summary{cursor:pointer;font-weight:700;padding:.25rem 0}
+    footer{padding-block:1.5rem;margin-top:2.5rem;border-top:1px solid var(--line)}
+    @media(max-width:55rem){.categories ul{grid-template-columns:repeat(3,minmax(0,1fr))}.looks,.guides{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:38rem){.hero,.guides{grid-template-columns:1fr}.categories ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "name": "LoongBuy spreadsheet | Dansk guide til varer, QC og fragt",
+      "inLanguage": "da",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvad er et LoongBuy spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Det er en oversigt over produktlinks, typisk sorteret efter varetype. Tjek den aktuelle variant, størrelse og pris på den oprindelige produktliste."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan QC-fotos bevise, at en mærkevare er ægte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. QC-fotos hjælper dig med at se farve, mærkater og synlige fejl. Bed sælgeren om dokumentation for varens oprindelse, hvis ægthed er afgørende."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvad skal jeg regne med ved fragt til Danmark?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Læg varepris, lokal fragt, international fragt og eventuelle gebyrer sammen. Undersøg, om der kommer importmoms, told eller transportørgebyr oveni."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor fører varekategorierne hen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kategorierne åbner HipoBuyFinds katalog. Denne side er en uafhængig guide, og billederne er eksempler på modeller og detaljer."
+          }
+        }
+      ]
+    }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ajfhl/">
+</head>
+<body>
+  <header class="top"><div class="wrap"><a href="https://www.hipobuyfind.com">HipoBuyFind</a></div></header>
+  <main class="wrap">
+    <nav class="categories" aria-labelledby="kategorier">
+      <h2 id="kategorier">Varekategorier</h2>
+      <ul>
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Sko</a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hættetrøjer og strik</a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jakker</a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Bukser og shorts</a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Kasketter og huer</a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Sæt</a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Undertøj</a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Sportstrøjer</a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Tilbehør</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" aria-labelledby="overskrift">
+      <div>
+        <h1 id="overskrift">LoongBuy spreadsheet</h1>
+        <p>Et LoongBuy spreadsheet samler produktlinks, så du kan finde og sammenligne varer fra markedspladser som Weidian, Taobao og 1688. Brug denne danske guide til at tjekke model, mål og lagerfotos, før du regner på den samlede pris.</p>
+        <a class="button" href="https://www.hipobuyfind.com">Se kataloget hos HipoBuyFind</a>
+      </div>
+      <figure>
+        <img src="https://i.ebayimg.com/images/g/ShQAAOSw4-NmyLf~/s-l500.png" width="500" height="500" loading="eager" fetchpriority="high" decoding="async" alt="Hvid Nike Air Force 1 ’07-sneaker">
+        <figcaption>Nike Air Force 1 ’07. Brug modelnavn og modelkode, når du sammenligner to opslag.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="detaljer">
+      <h2 id="detaljer">Detaljer at se efter</h2>
+      <p class="intro">Billederne viser eksempler på jakker, hovedbeklædning og smykker. Brug dem som inspiration til, hvilke mål og nærbilleder du skal bede om.</p>
+      <div class="looks">
+        <figure>
+          <img src="https://en.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-denim-jacket--FVJA29EFY610_PM2_Front%20view.png?hei=480&amp;wid=480" width="480" height="480" loading="lazy" decoding="async" alt="Blå Louis Vuitton-denimjakke med monogram og brystlommer">
+          <figcaption>Louis Vuitton · Tjek skulderbredde og ærmelængde.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1689960707/763332_4HA4U_9764_001_100_0000_Light-Casquette-en-toile-GGSupreme.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Beige Gucci GG Supreme-kasket med monogrammotiv">
+          <figcaption>Gucci · Tjek hovedomkreds og justering bagpå.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/bracelet-clic-h--700001F%204P-front-1-300-0-1000-1000_b.jpg?wid=480" width="480" height="480" loading="lazy" decoding="async" alt="Hermès Clic H-armbånd med H-formet lukning">
+          <figcaption>Hermès · Sammenlign håndledsmål med den indvendige omkreds.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/LOOK_F_25_1_LOOK_691_E12?%24lookDefault_GH-GHC%24=&amp;bfc=on&amp;crop=568%2C0%2C1864%2C2000&amp;qlt=85&amp;wid=480" width="480" height="515" loading="lazy" decoding="async" alt="Dior Petit CD-halskæde med krystalbesat detalje">
+          <figcaption>Dior · Se efter kædelængde og et nærbillede af låsen.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="guides">
+      <h2 id="guides">Fire købsguides</h2>
+      <!-- Sekundære søgefraser: LoongBuy produktlinks, LoongBuy størrelsesguide, LoongBuy QC-fotos, LoongBuy fragt til Danmark. -->
+      <div class="guides">
+        <article>
+          <h3>LoongBuy produktlinks</h3>
+          <p>Når du sammenligner Weidian-produktlinks, Taobao-varelister og 1688-sælgeropslag, så gem linket til det oprindelige opslag. Tjek sælgerens modelkode, farvevariant og lagerstatus. Find den aktuelle varepris igen, hvis oversigten viser et ældre beløb.</p>
+        </article>
+        <article>
+          <h3>LoongBuy størrelsesguide</h3>
+          <p>Sammenlign EU-skostørrelser ved hjælp af sælgerens indvendige skolængde og mål fra et par, der passer dig. Læg en trøje fladt for at måle brystbredde og ærmelængde. Ved bukser er taljemål og indvendig benlængde ofte de mest brugbare mål.</p>
+        </article>
+        <article>
+          <h3>LoongBuy QC-fotos</h3>
+          <p>Brug lagerfotos til at tjekke sålmønster, syninger, lynlåse og størrelsesmærker. Bed om et nærbillede af en plet eller skade, hvis et foto er uklart. Tjek fristen for ombytning eller retur til sælgeren, inden pakken sendes videre.</p>
+        </article>
+        <article>
+          <h3>LoongBuy fragt til Danmark</h3>
+          <p>Se efter indenrigsfragt i Kina og international fragt til Danmark i overslaget. Sammenlign pakkens faktiske vægt med volumenvægten, og spørg, om flere varer kan samles. Regn totalprisen i danske kroner med valutakurs og eventuelle importomkostninger.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq">
+      <h2 id="faq">Ofte stillede spørgsmål</h2>
+      <details open>
+        <summary>Hvad er et LoongBuy spreadsheet?</summary>
+        <p>Det er en oversigt over produktlinks, typisk sorteret efter varetype. Tjek den aktuelle variant, størrelse og pris på den oprindelige produktliste.</p>
+      </details>
+      <details>
+        <summary>Kan QC-fotos bevise, at en mærkevare er ægte?</summary>
+        <p>Nej. QC-fotos hjælper dig med at se farve, mærkater og synlige fejl. Bed sælgeren om dokumentation for varens oprindelse, hvis ægthed er afgørende.</p>
+      </details>
+      <details>
+        <summary>Hvad skal jeg regne med ved fragt til Danmark?</summary>
+        <p>Læg varepris, lokal fragt, international fragt og eventuelle gebyrer sammen. Undersøg, om der kommer importmoms, told eller transportørgebyr oveni.</p>
+      </details>
+      <details>
+        <summary>Hvor fører varekategorierne hen?</summary>
+        <p>Kategorierne åbner HipoBuyFinds katalog. Denne side er en uafhængig guide, og billederne er eksempler på modeller og detaljer.</p>
+      </details>
+    </section>
+
+    <footer>
+      <p class="note">Uafhængig dansk købsguide. Mærkenavne bruges til at identificere de viste modeller.</p>
+      <a href="https://www.hipobuyfind.com">Åbn HipoBuyFind</a>
+    </footer>
+  </main>
+</body>
+</html>
